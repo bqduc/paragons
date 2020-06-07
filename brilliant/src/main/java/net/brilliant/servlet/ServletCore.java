@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
-import net.paramount.framework.logging.LogService;
+import net.brilliant.framework.logging.LogService;
 
 /**
  * @author ducbq

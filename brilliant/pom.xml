@@ -76,13 +76,31 @@
         
 		<dependency>
             <groupId>${project.groupId}</groupId>
+            <artifactId>brilliant-auth</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+		<dependency>
+            <groupId>${project.groupId}</groupId>
             <artifactId>brilliant-css</artifactId>
             <version>${project.version}</version>
         </dependency>
 
 		<dependency>
             <groupId>${project.groupId}</groupId>
+            <artifactId>brilliant-core-eux</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+		<dependency>
+            <groupId>${project.groupId}</groupId>
             <artifactId>brilliant-dispatcher</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+		<dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>brilliant-api-dispatcher</artifactId>
             <version>${project.version}</version>
         </dependency>
         <!-- <dependency>

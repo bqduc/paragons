@@ -10,7 +10,7 @@ import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
 import net.brilliant.dispatcher.DataServiceDispatchHelper;
-import net.paramount.framework.component.ComponentBase;
+import net.brilliant.framework.component.ComponentBase;
 
 /**
  * @author ducbq

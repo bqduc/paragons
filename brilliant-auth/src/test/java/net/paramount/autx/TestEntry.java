@@ -6,9 +6,9 @@ package net.paramount.autx;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import net.paramount.auth.comp.JWTServiceImpl;
-import net.paramount.auth.entity.UserAccountProfile;
-import net.paramount.framework.entity.auth.AuthenticationDetails;
+import net.brilliant.auth.comp.JWTServiceImpl;
+import net.brilliant.auth.entity.UserAccountProfile;
+import net.brilliant.framework.entity.auth.AuthenticationDetails;
 
 /**
  * @author ducbq

@@ -11,8 +11,8 @@ import java.util.Map;
 import javax.faces.context.FacesContext;
 
 import lombok.Builder;
-import net.paramount.common.CommonUtility;
-import net.paramount.common.ListUtility;
+import net.brilliant.common.CommonUtility;
+import net.brilliant.common.ListUtility;
 
 /**
  * @author ducbui

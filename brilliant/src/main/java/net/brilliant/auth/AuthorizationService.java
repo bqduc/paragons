@@ -1,6 +1,6 @@
 /**
  * 
- */
+ *//*
 package net.brilliant.auth;
 
 import java.util.List;
@@ -16,10 +16,10 @@ import net.paramount.exceptions.ObjectNotFoundException;
 import net.paramount.framework.entity.auth.AuthenticationDetails;
 import net.paramount.framework.model.ExecutionContext;
 
-/**
+*//**
  * @author ducbq
  *
- */
+ *//*
 public interface AuthorizationService {
 	UserSecurityProfile authenticate(String ssoId, String password) throws NgepAuthException;
 	UserSecurityProfile authenticate(String token) throws NgepAuthException;
@@ -42,3 +42,4 @@ public interface AuthorizationService {
 
 	//boolean hasAccessDecisionPolicy(FilterInvocation filterInvocation, Authentication authentication);
 }
+*/

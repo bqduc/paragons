@@ -10,13 +10,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import net.paramount.common.ListUtility;
-import net.paramount.domain.entity.Attachment;
-import net.paramount.domain.model.dto.FacadeCore;
-import net.paramount.entity.stock.InventoryCore;
-import net.paramount.entity.stock.InventoryDetail;
-import net.paramount.entity.stock.InventoryImage;
-import net.paramount.entity.stock.InventoryPrice;
+import net.brilliant.common.ListUtility;
+import net.brilliant.domain.entity.Attachment;
+import net.brilliant.domain.model.dto.FacadeCore;
+import net.brilliant.entity.stock.InventoryCore;
+import net.brilliant.entity.stock.InventoryDetail;
+import net.brilliant.entity.stock.InventoryImage;
+import net.brilliant.entity.stock.InventoryPrice;
 
 /**
  * @author ducbq

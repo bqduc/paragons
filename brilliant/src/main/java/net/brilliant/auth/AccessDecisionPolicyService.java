@@ -1,4 +1,4 @@
-package net.brilliant.auth;
+/*package net.brilliant.auth;
 
 import java.util.List;
 
@@ -10,3 +10,4 @@ public interface AccessDecisionPolicyService extends GenericService<AccessDecisi
 	List<AccessDecisionPolicy> getAccessDecisionPolicies(String accessPattern);
 	List<AccessDecisionPolicy> getAccessDecisionPoliciesByAuthority(Authority authority);
 }
+*/

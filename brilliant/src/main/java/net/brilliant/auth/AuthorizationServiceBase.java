@@ -1,6 +1,6 @@
 /**
  * 
- */
+ *//*
 package net.brilliant.auth;
 
 import javax.inject.Inject;
@@ -17,10 +17,10 @@ import net.paramount.common.CommonUtility;
 import net.paramount.exceptions.EcosExceptionCode;
 import net.paramount.exceptions.NgepAuthException;
 
-/**
+*//**
  * @author ducbq
  *
- */
+ *//*
 public abstract class AuthorizationServiceBase {
 	@Inject
 	protected UserAccountService userAccountService;
@@ -98,3 +98,4 @@ public abstract class AuthorizationServiceBase {
 	}
 
 }
+*/

@@ -11,16 +11,18 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Component;
 
+import com.google.api.client.repackaged.org.apache.commons.codec.binary.Base64;
+
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.MalformedJwtException;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.UnsupportedJwtException;
-import net.paramount.auth.entity.UserAccountProfile;
-import net.paramount.common.Base64Utils;
-import net.paramount.framework.component.CompCore;
-import net.paramount.framework.entity.auth.AuthenticationDetails;
+import net.brilliant.auth.entity.UserAccountProfile;
+import net.brilliant.common.Base64Utils;
+import net.brilliant.framework.component.CompCore;
+import net.brilliant.framework.entity.auth.AuthenticationDetails;
 
 /**
  * @author ducbq
@@ -140,13 +142,21 @@ public class JsonWebTokenServiceProvider extends CompCore implements JsonWebToke
 
 	@Override
 	public String resolveToken(HttpServletRequest req) {
-		final String REQUEST_HEADER_BEARER_TOKENS = "BearerToken";
+		final String[] REQUEST_HEADER_BEARER_TOKENS = new String[] {"Bearer ", "BearerToken"};
 
 		String bearerToken = req.getHeader("Authorization");
-		bearerToken = Base64Utils.decode(bearerToken);
-    if (bearerToken != null && bearerToken.startsWith(REQUEST_HEADER_BEARER_TOKENS)) {
-        return bearerToken.substring(REQUEST_HEADER_BEARER_TOKENS.length(), bearerToken.length());
-    }
+		if (Base64.isBase64(bearerToken)) {
+			bearerToken = Base64Utils.decode(bearerToken);
+		}
+
+		if (null==bearerToken)
+			return null;
+
+		for (String requestHeaderBearerToken :REQUEST_HEADER_BEARER_TOKENS) {
+			if (bearerToken.startsWith(requestHeaderBearerToken))
+		        return bearerToken.substring(requestHeaderBearerToken.length(), bearerToken.length());
+
+		}
 		return null;
 	}
 }

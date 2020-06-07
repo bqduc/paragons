@@ -1,4 +1,4 @@
-package net.brilliant.auth.impl;
+/*package net.brilliant.auth.impl;
 
 import java.util.Optional;
 
@@ -44,3 +44,4 @@ public class AuthorityServiceImpl extends GenericServiceImpl<Authority, Long> im
 		return fetchedResult;
 	}
 }
+*/

@@ -52,8 +52,8 @@ import org.slf4j.LoggerFactory;
 
 import com.google.api.client.http.FileContent;
 
+import net.brilliant.common.CommonConstants;
 import net.brilliant.utility.FileUtility;
-import net.paramount.common.CommonConstants;
 
 /**
  * Created by rmpestano on 01/05/17.

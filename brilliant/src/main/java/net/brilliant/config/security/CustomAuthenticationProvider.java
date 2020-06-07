@@ -1,4 +1,4 @@
-package net.brilliant.config.security;
+/*package net.brilliant.config.security;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,26 +12,25 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Component;
 
-import net.brilliant.auth.AuthorizationService;
 import net.paramount.auth.domain.UserSecurityProfile;
 import net.paramount.auth.entity.Authority;
+import net.paramount.auth.service.AuthorizationService;
 import net.paramount.common.CommonUtility;
 import net.paramount.exceptions.NgepAuthException;
 import net.paramount.framework.component.CompCore;
 import net.paramount.global.GlobalConstants;
 
-/**
+*//**
  * Created by aLeXcBa1990 on 24/11/2018.
  * 
- */
+ *//*
 @Component(value="authenticationProvider")
 public class CustomAuthenticationProvider extends CompCore implements AuthenticationProvider {
-	/**
+	*//**
 	 * 
-	 */
+	 *//*
 	private static final long serialVersionUID = -8355652678792800184L;
 
 	@Inject
@@ -79,9 +78,9 @@ public class CustomAuthenticationProvider extends CompCore implements Authentica
 		
 		List<GrantedAuthority> grantedAuths = new ArrayList<>();
 		if (user.equalsIgnoreCase("admin") && password.equalsIgnoreCase("admin")){
-			grantedAuths.add(Authority.builder().name("ROLE_ADMIN").build()/*new SimpleGrantedAuthority("ROLE_ADMIN")*/);
+			grantedAuths.add(Authority.builder().name("ROLE_ADMIN").build()new SimpleGrantedAuthority("ROLE_ADMIN"));
 		} else if (user.equalsIgnoreCase("user") && password.equalsIgnoreCase("user")){
-			grantedAuths.add(Authority.builder().name("ROLE_USER").build() /*new SimpleGrantedAuthority("ROLE_USER")*/);
+			grantedAuths.add(Authority.builder().name("ROLE_USER").build() new SimpleGrantedAuthority("ROLE_USER"));
 		}
 		
 		if (grantedAuths.size() > 0) {
@@ -98,8 +97,8 @@ public class CustomAuthenticationProvider extends CompCore implements Authentica
 
 	private Authentication authenticateBySsoId(String ssoId, String password) throws NgepAuthException {
 		Authentication authObject = null;
-		/*if ("administrator".equalsIgnoreCase(ssoId) && "administrator".equalsIgnoreCase(password))
-			authObject = new UsernamePasswordAuthenticationToken(ssoId, password);*/
+		if ("administrator".equalsIgnoreCase(ssoId) && "administrator".equalsIgnoreCase(password))
+			authObject = new UsernamePasswordAuthenticationToken(ssoId, password);
 			
 		UserSecurityProfile securityPrincipalProfile = null;
 		try {
@@ -132,3 +131,4 @@ public class CustomAuthenticationProvider extends CompCore implements Authentica
 		return authByToken;
 	}
 }
+*/

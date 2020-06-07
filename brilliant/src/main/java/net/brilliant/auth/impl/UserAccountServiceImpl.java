@@ -1,4 +1,4 @@
-package net.brilliant.auth.impl;
+/*package net.brilliant.auth.impl;
 
 import java.util.HashSet;
 import java.util.List;
@@ -37,9 +37,9 @@ import net.paramount.framework.service.GenericServiceImpl;
 
 @Service
 public class UserAccountServiceImpl extends GenericServiceImpl<UserAccountProfile, Long> implements UserAccountService {
-    /**
+    *//**
 	 * 
-	 */
+	 *//*
 	private static final long serialVersionUID = 6033439932741319171L;
 
 	@Inject
@@ -121,14 +121,14 @@ public class UserAccountServiceImpl extends GenericServiceImpl<UserAccountProfil
 		return registrationProfile;
 	}
 
-	/*private boolean hasBeenEncoded(String password) {
+	private boolean hasBeenEncoded(String password) {
 		final Pattern BCRYPT_PATTERN = Pattern.compile("\\A\\$2a?\\$\\d\\d\\$[./0-9A-Za-z] {53}");
 
 		if (BCRYPT_PATTERN.matcher(password).matches())
 			return true;
 
 		return false;
-	}*/
+	}
 
 	@Override
 	public void updateUser(UserAccountProfile user) {
@@ -166,13 +166,13 @@ public class UserAccountServiceImpl extends GenericServiceImpl<UserAccountProfil
 		return null;
 	}
 
-	/*@Override
+	@Override
 	public UserAccount save(UserAccount user) {
 		//user.setPassword(virtualEncoder.encode(user.getPassword()));
 		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		repository.save(user);
 		return user;
-	}*/
+	}
 
 	@Override
 	public UserAccountProfile getUserAccount(String loginId, String password) throws NgepAuthException {
@@ -251,7 +251,7 @@ public class UserAccountServiceImpl extends GenericServiceImpl<UserAccountProfil
 			Set<Authority> userAuthorities = new HashSet<>();
 			userAuthorities.add(userRoleEntity);
 
-			/*
+			
 			if (null==repository.findBySsoId(MasterUserGroup.Administrator.getLogin())){
 				//adminUser = User.createInstance("administrator@gmail.com", "Administrator", "System", MasterUserGroup.Administrator.getLogin(), passwordEncoder.encode("P@dministr@t0r"), adminAuthorities);
 				adminUser = UserAccount.createInstance(
@@ -298,7 +298,7 @@ public class UserAccountServiceImpl extends GenericServiceImpl<UserAccountProfil
 
 				adminUser.setAuthorities(userAuthorities);
 				repository.save(user);
-			}*/
+			}
 		} catch (Exception e) {
 			throw new NgepAuthException(e);
 		}
@@ -327,3 +327,4 @@ public class UserAccountServiceImpl extends GenericServiceImpl<UserAccountProfil
 		return this.repository.existsByEmail(emailAddress);
 	}
 }
+*/

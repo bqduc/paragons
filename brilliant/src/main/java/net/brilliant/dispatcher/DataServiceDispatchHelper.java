@@ -9,22 +9,21 @@ import org.springframework.core.env.Environment;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
-import net.brilliant.auth.AccessDecisionPolicyService;
-import net.brilliant.auth.AuthorityService;
 import net.brilliant.auth.BaseACL;
-import net.brilliant.auth.UserAccountService;
+import net.brilliant.auth.entity.AccessDecisionPolicy;
+import net.brilliant.auth.entity.Authority;
+import net.brilliant.auth.entity.UserAccountProfile;
+import net.brilliant.auth.model.AccessDecision;
+import net.brilliant.auth.service.AccessDecisionPolicyService;
+import net.brilliant.auth.service.AuthorityService;
+import net.brilliant.auth.service.UserAccountService;
+import net.brilliant.common.CommonUtility;
 import net.brilliant.config.jwt.JsonWebTokenService;
-import net.paramount.auth.entity.AccessDecisionPolicy;
-import net.paramount.auth.entity.Authority;
-import net.paramount.auth.entity.UserAccountProfile;
-import net.paramount.auth.model.AccessDecision;
-import net.paramount.common.Base64Utils;
-import net.paramount.common.CommonUtility;
-import net.paramount.css.service.config.ConfigurationService;
-import net.paramount.entity.config.Configuration;
-import net.paramount.framework.component.ComponentBase;
-import net.paramount.global.GlobalConstants;
-import net.paramount.lingual.helper.LingualHelper;
+import net.brilliant.css.service.config.ConfigurationService;
+import net.brilliant.entity.config.Configuration;
+import net.brilliant.framework.component.ComponentBase;
+import net.brilliant.global.GlobalConstants;
+import net.brilliant.lingual.helper.LingualHelper;
 
 /**
  * @author ducbq

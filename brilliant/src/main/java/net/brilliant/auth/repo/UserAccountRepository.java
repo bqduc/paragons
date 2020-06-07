@@ -12,7 +12,7 @@
 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 * See the License for the specific language governing permissions and
 * limitations under the License.
-*/
+
 package net.brilliant.auth.repo;
 
 import org.springframework.stereotype.Repository;
@@ -21,17 +21,17 @@ import org.springframework.transaction.annotation.Transactional;
 import net.paramount.auth.entity.UserAccountProfile;
 import net.paramount.framework.repository.BaseRepository;
 
-/**
+*//**
  * Repository interface for the {@link UserAccountProfile} entity. It contains methods for
  * regular <code>CRUD</code> operations
  * 
  * @author bqduc
  *
- */
+ *//*
 @Repository
 @Transactional
 public interface UserAccountRepository extends BaseRepository<UserAccountProfile, Long> {
-	/**
+	*//**
 	 * Retrieves a {@link UserAccountProfile} entity from the underlying data store by its
 	 * ResetKey
 	 * 
@@ -39,10 +39,10 @@ public interface UserAccountRepository extends BaseRepository<UserAccountProfile
 	 *            the login
 	 * @return a User entity
 	 * @see UserAccountProfile#getResetKey()
-	 */
+	 *//*
 	UserAccountProfile findBySsoId(String ssoId);
 
-	/**
+	*//**
 	 * Retrieves a {@link UserAccountProfile} entity from the underlying datastore by its
 	 * Email
 	 * 
@@ -50,10 +50,10 @@ public interface UserAccountRepository extends BaseRepository<UserAccountProfile
 	 *            the User's email
 	 * @return a User entity
 	 * @see UserAccountProfile#getEmail()
-	 */
+	 *//*
 	UserAccountProfile findByEmail(String email);
 
-	/**
+	*//**
 	 * Retrieves the number of entities from the underlying data store by its
 	 * login
 	 * 
@@ -61,24 +61,25 @@ public interface UserAccountRepository extends BaseRepository<UserAccountProfile
 	 *            the user name
 	 * @return a User entity
 	 * @see UserAccountProfile#getLogin()
-	 */
+	 *//*
 	Long countBySsoId(String login);
 	
-	/**
+	*//**
 	 * Check if a user with the email exists in the system
 	 * 
 	 * @param email
 	 *            the user account's email
 	 * @return a true if exists
-	 */
+	 *//*
 	boolean existsByEmail(String email);
 
-	/**
+	*//**
 	 * Check if a user with the ssoId exists in the system
 	 * 
 	 * @param ssoId
 	 *            the user account's ssoId
 	 * @return a true if exists
-	 */
+	 *//*
 	boolean existsBySsoId(String ssoId);
 }
+*/

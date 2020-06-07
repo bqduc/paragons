@@ -13,8 +13,8 @@ import javax.faces.context.FacesContext;
 
 import org.omnifaces.util.Faces;
 
+import net.brilliant.common.CommonUtility;
 import net.brilliant.i18n.GlobalDataRepository;
-import net.paramount.common.CommonUtility;
 
 /**
  * @author ducbq

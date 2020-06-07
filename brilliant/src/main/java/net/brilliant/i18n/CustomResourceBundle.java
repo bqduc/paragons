@@ -2,7 +2,7 @@
 
 import org.springframework.stereotype.Component;
 
-import net.paramount.common.CommonConstants;
+import net.brilliant.common.CommonConstants;
 
 /**
  * Adds support for UTF-8 based bundles for admin i18n messages

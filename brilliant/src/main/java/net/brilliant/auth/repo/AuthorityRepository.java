@@ -1,6 +1,6 @@
 /**
  * 
- */
+ *//*
 package net.brilliant.auth.repo;
 
 import org.springframework.data.domain.Page;
@@ -12,10 +12,10 @@ import org.springframework.stereotype.Repository;
 import net.paramount.auth.entity.Authority;
 import net.paramount.framework.repository.NameRepository;
 
-/**
+*//**
  * @author ducbui
  *
- */
+ *//*
 @Repository
 public interface AuthorityRepository extends NameRepository <Authority, Long>{
 	
@@ -26,3 +26,4 @@ public interface AuthorityRepository extends NameRepository <Authority, Long>{
 	)
 	Page<Authority> search(@Param("keyword") String keyword, Pageable pageable);
 }
+*/

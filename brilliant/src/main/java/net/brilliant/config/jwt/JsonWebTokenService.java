@@ -5,7 +5,7 @@ package net.brilliant.config.jwt;
 
 import javax.servlet.http.HttpServletRequest;
 
-import net.paramount.framework.entity.auth.AuthenticationDetails;
+import net.brilliant.framework.entity.auth.AuthenticationDetails;
 
 /**
  * @author ducbq

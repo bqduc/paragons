@@ -1,6 +1,6 @@
 /**
  * 
- */
+ *//*
 package net.brilliant.auth.impl;
 
 import java.util.List;
@@ -27,14 +27,14 @@ import net.paramount.exceptions.ObjectNotFoundException;
 import net.paramount.framework.entity.auth.AuthenticationDetails;
 import net.paramount.framework.model.ExecutionContext;
 
-/**
+*//**
  * @author ducbq
  *
- */
+ *//*
 @Service
 public class AuthorizationServiceImpl extends AuthorizationServiceBase implements AuthorizationService {
-	/*@Inject
-	private Communicator emailCommunicator;*/
+	@Inject
+	private Communicator emailCommunicator;
 
 	@Inject
 	private JsonWebTokenService tokenProvider;
@@ -70,7 +70,7 @@ public class AuthorizationServiceImpl extends AuthorizationServiceBase implement
 	public UserSecurityProfile register(ExecutionContext context) throws NgepAuthException {
 		String confirmLink = null;
 		UserSecurityProfile registrationProfile = null;
-		/*CorpMimeMessage mimeMessage = null;
+		CorpMimeMessage mimeMessage = null;
 		try {
 			registrationProfile = userAccountService.register((UserAccountProfile)context.get(CommunicatorConstants.CTX_USER_ACCOUNT));
 
@@ -92,7 +92,7 @@ public class AuthorizationServiceImpl extends AuthorizationServiceBase implement
 			emailCommunicator.send(context);
 		} catch (Exception e) {
 			throw new NgepAuthException(e);
-		}*/
+		}
 		return registrationProfile;
 	}
 
@@ -138,7 +138,7 @@ public class AuthorizationServiceImpl extends AuthorizationServiceBase implement
 		return accessDecisionPolicies;
 	}
 
-	/*@Override
+	@Override
 	public boolean hasAccessDecisionPolicy(FilterInvocation filterInvocation, Authentication authentication) {
 		final String MY_ACCESSED_DECISION_POLICIES = "myAccessedDecisionPolicies";
 		boolean hasAccessedPermission = false;
@@ -167,7 +167,7 @@ public class AuthorizationServiceImpl extends AuthorizationServiceBase implement
 		}
 
 		return hasAccessedPermission;
-	}*/
+	}
 
 	@Override
 	public UserAccountProfile saveSecurityAccountProfile(UserAccountProfile securityAccountProfile) throws NgepAuthException {
@@ -179,3 +179,4 @@ public class AuthorizationServiceImpl extends AuthorizationServiceBase implement
 		return securityAccountProfile;
 	}
 }
+*/

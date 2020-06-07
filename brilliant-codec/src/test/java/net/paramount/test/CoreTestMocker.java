@@ -20,12 +20,12 @@ import javax.crypto.SecretKey;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
-import net.paramount.common.CommonConstants;
-import net.paramount.exceptions.CryptographyException;
-import net.paramount.security.CryptographyAlgorithm;
-import net.paramount.security.GlobalCryptogramRepository;
-import net.paramount.security.SecretAlgorithm;
-import net.paramount.security.base.Cryptographer;
+import net.brilliant.common.CommonConstants;
+import net.brilliant.exceptions.CryptographyException;
+import net.brilliant.security.CryptographyAlgorithm;
+import net.brilliant.security.GlobalCryptogramRepository;
+import net.brilliant.security.SecretAlgorithm;
+import net.brilliant.security.base.Cryptographer;
 
 /**
  * @author ducbq

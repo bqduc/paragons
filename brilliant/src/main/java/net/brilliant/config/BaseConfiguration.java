@@ -13,7 +13,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import net.brilliant.config.security.SecurityConfiguration;
-import net.paramount.global.GlobalConstants;
+import net.brilliant.global.GlobalConstants;
 
 /**
  * @author bqduc

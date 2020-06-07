@@ -1,6 +1,6 @@
 /**
  * 
- */
+ *//*
 package net.brilliant.auth.repo;
 
 import java.util.List;
@@ -10,10 +10,10 @@ import org.springframework.stereotype.Repository;
 import net.paramount.auth.entity.AccessDecisionPolicy;
 import net.paramount.framework.repository.BaseRepository;
 
-/**
+*//**
  * @author bqduc
  *
- */
+ *//*
 @Repository
 public interface AccessDecisionPolicyRepository extends BaseRepository<AccessDecisionPolicy, Long> {
 	List<AccessDecisionPolicy> findByAccessPattern(String accessPattern);
@@ -21,3 +21,4 @@ public interface AccessDecisionPolicyRepository extends BaseRepository<AccessDec
 	
 	boolean existsByAccessPattern(String accessPattern);
 }
+*/

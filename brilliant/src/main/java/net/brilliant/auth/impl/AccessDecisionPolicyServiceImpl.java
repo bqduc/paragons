@@ -1,4 +1,4 @@
-package net.brilliant.auth.impl;
+/*package net.brilliant.auth.impl;
 
 import java.util.List;
 
@@ -46,3 +46,4 @@ public class AccessDecisionPolicyServiceImpl extends GenericServiceImpl<AccessDe
 		return fetchedResults;//this.repository.findByAuthority(authority);
 	}
 }
+*/

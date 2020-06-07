@@ -32,6 +32,7 @@ import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.security.web.csrf.CsrfFilter;
 import org.springframework.web.filter.CharacterEncodingFilter;
 
+import net.brilliant.common.CommonConstants;
 import net.brilliant.config.jwt.JsonWebTokenService;
 import net.brilliant.config.jwt.JwtSecurityConfigurer;
 import net.brilliant.servlet.ServletConstants;
@@ -73,7 +74,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	public class ApiWebSecurityConfigurationAdapter extends WebSecurityConfigurerAdapter {
 		protected void configure(HttpSecurity http) throws Exception {
 			// rest Login
-			http.antMatcher(net.paramount.common.CommonConstants.REST_API + "**").authorizeRequests().anyRequest().fullyAuthenticated()/*.hasRole("ADMIN")*/
+			http.antMatcher(CommonConstants.REST_API + "**").authorizeRequests().anyRequest().fullyAuthenticated()/*.hasRole("ADMIN")*/
 			.and()
 			//.apply(new JwtConfigurer(jwtTokenProvider))
 			.httpBasic().and().csrf()

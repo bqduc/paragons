@@ -33,12 +33,12 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
+import net.brilliant.common.CommonConstants;
+import net.brilliant.common.CommonUtility;
+import net.brilliant.common.ListUtility;
 import net.brilliant.component.LocaleManager;
-import net.paramount.common.CommonConstants;
-import net.paramount.common.CommonUtility;
-import net.paramount.common.ListUtility;
-import net.paramount.context.DatabaseMessageServiceImpl;
-import net.paramount.context.MessagePersistenceService;
+import net.brilliant.context.DatabaseMessageServiceImpl;
+import net.brilliant.context.MessagePersistenceService;
 
 /**
  * <code>MultiplePropertiesResourceBundle</code> is an abstract base implementation to allow to

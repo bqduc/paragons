@@ -30,34 +30,21 @@
                                          update="@form" rendered="#{businessUnitController.isNew()}" resetValues="true"/>
                         <p:spacer width="5" rendered="#{not businessUnitController.isNew()}"/>
 
-                        <p:commandButton process="@this"
-                                         rendered="#{not businessUnitController.isNew()}" icon="fa fa-trash"
-                                         styleClass="btn-danger">
-                            <f:setPropertyActionListener value="true"
-                                                         target="#{facesContext.externalContext.flash.keepMessages}"/>
+                        <p:commandButton process="@this" rendered="#{not businessUnitController.isNew()}" icon="fa fa-trash" styleClass="btn-danger">
+                            <f:setPropertyActionListener value="true" target="#{facesContext.externalContext.flash.keepMessages}"/>
                             <p:confirm header="Confirmation" message="Are you sure?" icon="ui-icon-danger"/>
                         </p:commandButton>
                         <p:spacer width="5"/>
-                        <p:commandButton immediate="true"
-                                         action="businessUnitBrowse?faces-redirect=true"
-                                         process="@this"
-                                         icon="fa fa-reply"/>
+                        <p:commandButton immediate="true" action="businessUnitBrowse?faces-redirect=true" process="@this" icon="fa fa-reply"/>
                     </div>
-                    <p:splitButton value="#{messages['lbl.general.save']}" action="#{businessUnitController.save}" update="@form"
-                                   icon="fa fa-check"
-                                   styleClass="hidden-md hidden-lg btn-primary">
-                        <p:menuitem value="Reset" action="#{businessUnitController.clear}"
-                                    process="@this" update="@form" rendered="#{businessUnitController.isNew()}"
-                                    resetValues="true" icon="fa fa-refresh"/>
+                    <p:splitButton value="#{messages['lbl.general.save']}" action="#{businessUnitController.save}" update="@form" icon="fa fa-check" styleClass="hidden-md hidden-lg btn-primary">
+                        <p:menuitem value="Reset" action="#{businessUnitController.clear}" process="@this" update="@form" rendered="#{businessUnitController.isNew()}" resetValues="true" icon="fa fa-refresh"/>
                         <p:menuitem value="#{messages['lbl.general.delete']}" action="#{businessUnitController.remove}" process="@this"
-                                    rendered="#{not businessUnitController.isNew()}" icon="fa fa-trash"
-                                 >
+                                    rendered="#{not businessUnitController.isNew()}" icon="fa fa-trash">
                             <p:confirm header="Confirmation" message="Are you sure?" icon="ui-icon-danger"/>
                         </p:menuitem>
                         <p:separator/>
-                        <p:menuitem value="#{messages['lbl.general.goBack']}" action="car-list?faces-redirect=true"
-                                    process="@this" immediate="true"
-                                    icon="fa fa-reply"/>
+                        <p:menuitem value="#{messages['lbl.general.goBack']}" action="car-list?faces-redirect=true" process="@this" immediate="true" icon="fa fa-reply"/>
                     </p:splitButton>
 
                     <p:separator/>
@@ -67,8 +54,7 @@
                             <p:outputLabel for="id" value="ID"/>
                         </div>
                         <div class="ui-sm-12 ui-md-4 ui-lg-5" >
-                            <p:inputText id="id" value="#{businessUnitController.businessObject.id}" size="4"
-                                         readonly="true" styleClass="form-control" style="width: 100%"/>
+                            <p:inputText id="id" value="#{businessUnitController.businessObject.id}" size="4" readonly="true" styleClass="form-control" style="width: 100%"/>
                         </div>
                         <div class="ui-sm-12 ui-md-2 ui-lg-1">
                             <p:outputLabel value="Model" for="inptModel"/>
@@ -86,7 +72,7 @@
                             <p:outputLabel value="Price" for="inptPrice"/>
                         </div>
                         <div class="ui-sm-12 ui-md-4 ui-lg-5" >
-                            <p:inputNumber id="inptPrice" value="#{businessUnitController.businessObject.code}"/>
+                            <p:inputText id="inptPrice" value="#{businessUnitController.businessObject.code}"/>
                         </div>
                     </div>
                 </div>

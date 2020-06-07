@@ -1,4 +1,4 @@
-package com.github.adminfaces.starter;
+/*package com.github.adminfaces.starter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,10 +11,10 @@ import org.springframework.stereotype.Component;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
-/**
+*//**
  * Created by aLeXcBa1990 on 24/11/2018.
  * 
- */
+ *//*
 
 @Component
 public class CustomAuthenticationProvider implements AuthenticationProvider {
@@ -50,3 +50,4 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 	}
 	
 }
+*/

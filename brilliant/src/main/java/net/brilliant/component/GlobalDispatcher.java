@@ -8,6 +8,7 @@ import java.io.InputStream;
 import java.util.Base64;
 
 import javax.enterprise.context.SessionScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.servlet.ServletContext;
@@ -18,11 +19,11 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
-import net.brilliant.auth.AuthorizationService;
-import net.paramount.auth.domain.UserSecurityProfile;
-import net.paramount.common.CommonUtility;
-import net.paramount.framework.component.ComponentBase;
-import net.paramount.global.GlobalConstants;
+import net.brilliant.auth.domain.UserSecurityProfile;
+import net.brilliant.auth.service.AuthorizationService;
+import net.brilliant.common.CommonUtility;
+import net.brilliant.framework.component.ComponentBase;
+import net.brilliant.global.GlobalConstants;
 
 /**
  * @author ducbq
@@ -69,8 +70,25 @@ public class GlobalDispatcher extends ComponentBase {
 	}
 	
 	protected HttpSession session() {
-	    ServletRequestAttributes attr = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
-	    return attr.getRequest().getSession(true); // true == allow create
+		this.httpSession = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true);
+		if (null != this.httpSession)
+			return this.httpSession;
+
+		if (null != this.request) {
+			return this.request.getSession();
+		}
+
+		if (null != this.httpSession)
+			return this.httpSession;
+
+		try {
+			ServletRequestAttributes attr = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
+			this.httpSession = attr.getRequest().getSession(true);
+		} catch (Exception e) {
+			log.error(e);
+		}
+		return this.httpSession;
+		// return attr.getRequest().getSession(true); // true == allow create
 	}
 
 	public String getFailureMessage() {

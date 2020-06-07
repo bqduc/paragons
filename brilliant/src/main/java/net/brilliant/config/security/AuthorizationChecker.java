@@ -10,17 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Component;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.util.PathMatcher;
 
-import net.brilliant.auth.AccessDecisionPolicyService;
-import net.paramount.auth.entity.AccessDecisionPolicy;
-import net.paramount.auth.entity.Authority;
-import net.paramount.auth.model.AccessDecision;
-import net.paramount.common.CommonConstants;
-import net.paramount.common.ListUtility;
+import net.brilliant.auth.entity.AccessDecisionPolicy;
+import net.brilliant.auth.entity.Authority;
+import net.brilliant.auth.model.AccessDecision;
+import net.brilliant.auth.service.AccessDecisionPolicyService;
+import net.brilliant.common.CommonConstants;
+import net.brilliant.common.ListUtility;
 
 /**
  * @author ducbq

@@ -9,7 +9,7 @@ import com.github.adminfaces.starter.service.CarService;
 import com.github.adminfaces.starter.util.Utils;
 import com.github.adminfaces.template.exception.AccessDeniedException;
 
-import net.paramount.common.CommonUtility;
+import net.brilliant.common.CommonUtility;
 
 import org.omnifaces.util.Faces;
 
