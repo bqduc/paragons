@@ -12,10 +12,10 @@ import net.brilliant.css.specification.ContactSpecification;
 import net.brilliant.entity.contact.CTAContact;
 import net.brilliant.exceptions.ExecutionContextException;
 import net.brilliant.exceptions.ObjectNotFoundException;
-import net.brilliant.framework.model.ExecutionContext;
 import net.brilliant.framework.model.SearchParameter;
 import net.brilliant.framework.repository.BaseRepository;
 import net.brilliant.framework.service.GenericServiceImpl;
+import net.brilliant.model.ExecutionContext;
 
 
 @Service

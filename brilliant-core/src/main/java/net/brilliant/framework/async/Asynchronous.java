@@ -8,7 +8,7 @@ import java.util.GregorianCalendar;
 import javax.inject.Inject;
 
 import net.brilliant.framework.logging.LogService;
-import net.brilliant.framework.model.ExecutionContext;
+import net.brilliant.model.ExecutionContext;
 
 /**
  * @author bqduc_2

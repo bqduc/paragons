@@ -32,6 +32,23 @@
 			<version>${commons-lang.version}</version>
 		</dependency>
 
+<dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-collections4</artifactId>
+    <version>4.4</version>
+</dependency>
+
+    <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-lang3</artifactId>
+    </dependency>
+
+     <dependency>
+         <groupId>org.apache.commons</groupId>
+         <artifactId>commons-text</artifactId>
+         <version>${version.commons-text}</version>
+     </dependency>		
+
 		<dependency>
 			<groupId>com.googlecode.libphonenumber</groupId>
 			<artifactId>libphonenumber</artifactId>
@@ -56,6 +73,12 @@
 			<version>${version.lombok}</version>
 			<scope>provided</scope>
 		</dependency>
+
+	  <dependency>
+	    <groupId>com.monitorjbl</groupId>
+	    <artifactId>xlsx-streamer</artifactId>
+	    <version>${version.xlsx-streamer}</version>
+	  </dependency>
 
 	</dependencies>
 </project>

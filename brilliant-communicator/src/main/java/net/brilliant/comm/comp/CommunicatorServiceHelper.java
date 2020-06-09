@@ -17,7 +17,7 @@ import net.brilliant.comm.global.CommunicatorConstants;
 import net.brilliant.common.CommonUtility;
 import net.brilliant.exceptions.CommunicatorException;
 import net.brilliant.framework.component.ComponentBase;
-import net.brilliant.framework.model.ExecutionContext;
+import net.brilliant.model.ExecutionContext;
 
 @Component
 public class CommunicatorServiceHelper extends ComponentBase {

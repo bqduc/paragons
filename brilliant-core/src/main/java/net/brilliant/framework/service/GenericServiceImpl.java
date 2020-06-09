@@ -28,18 +28,18 @@ import net.brilliant.common.CommonConstants;
 import net.brilliant.common.CommonUtility;
 import net.brilliant.common.ListUtility;
 import net.brilliant.exceptions.AppException;
-import net.brilliant.exceptions.AppRuntimeException;
+import net.brilliant.exceptions.CommonException;
 import net.brilliant.exceptions.ExecutionContextException;
 import net.brilliant.exceptions.ObjectNotFoundException;
 import net.brilliant.framework.entity.RepoAuditable;
 import net.brilliant.framework.entity.RepoEntity;
-import net.brilliant.framework.model.ExecutionContext;
 import net.brilliant.framework.model.SearchParameter;
 import net.brilliant.framework.model.SearchSpec;
 import net.brilliant.framework.predicator.BrilliancePredicator;
 import net.brilliant.framework.repository.BaseRepository;
 import net.brilliant.framework.repository.CodeSerialRepository;
 import net.brilliant.framework.specification.DefaultSpecification;
+import net.brilliant.model.ExecutionContext;
 
 
 @Service
@@ -180,7 +180,7 @@ public abstract class GenericServiceImpl<ClassType extends RepoEntity, Key exten
 		try {
 			isExists = existsEntity(invokeMethod, parameters);
 		} catch (AppException e) {
-			throw new AppRuntimeException(e);
+			throw new CommonException(e);
 		}
 		return isExists;
 	}

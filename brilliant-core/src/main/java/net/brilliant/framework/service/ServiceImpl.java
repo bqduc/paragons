@@ -21,7 +21,7 @@ import org.springframework.transaction.annotation.Transactional;
 import net.brilliant.common.BeanUtility;
 import net.brilliant.common.CommonConstants;
 import net.brilliant.common.ListUtility;
-import net.brilliant.exceptions.AppRuntimeException;
+import net.brilliant.exceptions.CommonException;
 import net.brilliant.exceptions.ExecutionContextException;
 import net.brilliant.framework.component.ComponentBase;
 import net.brilliant.framework.entity.RepoEntity;
@@ -97,7 +97,7 @@ public abstract class ServiceImpl<EntityType extends RepoEntity, Key extends Ser
 	}
 
 	protected Page<EntityType> performSearch(String keyword, Pageable pageable){
-		throw new AppRuntimeException("Not implemented yet!!!");//DUMMY_PAGEABLE;
+		throw new CommonException("Not implemented yet!!!");//DUMMY_PAGEABLE;
 	}
 
 	protected List<EntityType> performSearch(Object parameter){

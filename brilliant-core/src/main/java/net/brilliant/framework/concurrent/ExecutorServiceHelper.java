@@ -15,8 +15,8 @@ import org.springframework.stereotype.Component;
 
 import net.brilliant.common.ListUtility;
 import net.brilliant.framework.component.CompCore;
-import net.brilliant.framework.model.ExecutionContext;
 import net.brilliant.global.GlobalConstants;
+import net.brilliant.model.ExecutionContext;
 
 /**
  * @author ducbq

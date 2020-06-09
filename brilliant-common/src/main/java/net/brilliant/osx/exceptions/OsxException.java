@@ -1,20 +1,20 @@
-package net.brilliant.exceptions;
+package net.brilliant.osx.exceptions;
 
 /**
- * The class {@code AppRuntimeException} and its subclasses are a form of
+ * The class {@code OsxException} and its subclasses are a form of
  * {@code Throwable} that indicates conditions that a reasonable
  * application might want to catch.
  *
- * <p>The class {@code AppRuntimeException} and any subclasses that are not also
+ * <p>The class {@code OsxException} and any subclasses that are not also
  * subclasses of {@link RuntimeException} are <em>checked
  * exceptions</em>.  Checked exceptions need to be declared in a
  * method or constructor's {@code throws} clause if they can be thrown
  * by the execution of the method or constructor and propagate outside
  * the method or constructor boundary.
  *
- * @author bqduc
+ * @author ducbq
  */
-public class AppRuntimeException extends RuntimeException {
+public class OsxException extends RuntimeException {
 
 	/**
 	 * 
@@ -26,7 +26,7 @@ public class AppRuntimeException extends RuntimeException {
    * The cause is not initialized, and may subsequently be initialized by a
    * call to {@link #initCause}.
    */
-  public AppRuntimeException() {
+  public OsxException() {
       super();
   }
 
@@ -38,7 +38,7 @@ public class AppRuntimeException extends RuntimeException {
    * @param   message   the detail message. The detail message is saved for
    *          later retrieval by the {@link #getMessage()} method.
    */
-  public AppRuntimeException(String message) {
+  public OsxException(String message) {
       super(message);
   }
 
@@ -56,7 +56,7 @@ public class AppRuntimeException extends RuntimeException {
    *         unknown.)
    * @since  1.4
    */
-  public AppRuntimeException(String message, Throwable cause) {
+  public OsxException(String message, Throwable cause) {
       super(message, cause);
   }
 
@@ -74,7 +74,7 @@ public class AppRuntimeException extends RuntimeException {
    *         unknown.)
    * @since  1.4
    */
-  public AppRuntimeException(Throwable cause) {
+  public OsxException(Throwable cause) {
       super(cause);
   }
 
@@ -92,7 +92,7 @@ public class AppRuntimeException extends RuntimeException {
    *                           be writable
    * @since 1.7
    */
-  protected AppRuntimeException(String message, Throwable cause,
+  protected OsxException(String message, Throwable cause,
                       boolean enableSuppression,
                       boolean writableStackTrace) {
       super(message, cause, enableSuppression, writableStackTrace);

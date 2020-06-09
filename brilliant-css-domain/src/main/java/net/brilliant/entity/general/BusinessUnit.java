@@ -32,11 +32,11 @@ import net.brilliant.global.GlobalConstants;
 public class BusinessUnit extends BusinessEntity {
 	private static final long serialVersionUID = -1396860561985366652L;
 
-	@Size(min = 5, max = GlobalConstants.SIZE_SERIAL)
+	@Size(min = 3, max = GlobalConstants.SIZE_SERIAL)
 	@Column(name = "code")
 	private String code;
 
-	@Size(min = 5, max = 200)
+	@Size(min = 3, max = 200)
 	@Column(name = "name_local")
 	private String nameLocal;
 

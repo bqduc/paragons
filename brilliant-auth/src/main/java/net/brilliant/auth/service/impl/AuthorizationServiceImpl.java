@@ -32,8 +32,8 @@ import net.brilliant.common.ListUtility;
 import net.brilliant.exceptions.NgepAuthException;
 import net.brilliant.exceptions.ObjectNotFoundException;
 import net.brilliant.framework.entity.auth.AuthenticationDetails;
-import net.brilliant.framework.model.ExecutionContext;
 import net.brilliant.global.GlobalConstants;
+import net.brilliant.model.ExecutionContext;
 
 /**
  * @author ducbq

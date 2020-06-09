@@ -11,8 +11,8 @@ import org.springframework.data.domain.Pageable;
 import net.brilliant.exceptions.AppException;
 import net.brilliant.exceptions.ExecutionContextException;
 import net.brilliant.framework.entity.RepoEntity;
-import net.brilliant.framework.model.ExecutionContext;
 import net.brilliant.framework.model.SearchParameter;
+import net.brilliant.model.ExecutionContext;
 
 public interface GenericService<T extends RepoEntity, K extends Serializable> extends IService<T, K> {
 	T save(T entity);

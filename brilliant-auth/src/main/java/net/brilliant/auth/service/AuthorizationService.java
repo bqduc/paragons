@@ -14,7 +14,7 @@ import net.brilliant.auth.entity.UserAccountProfile;
 import net.brilliant.exceptions.NgepAuthException;
 import net.brilliant.exceptions.ObjectNotFoundException;
 import net.brilliant.framework.entity.auth.AuthenticationDetails;
-import net.brilliant.framework.model.ExecutionContext;
+import net.brilliant.model.ExecutionContext;
 
 /**
  * @author ducbq

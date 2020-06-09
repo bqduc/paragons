@@ -5,7 +5,7 @@ package net.brilliant.comm.comp;
 
 import net.brilliant.comm.domain.CorpMimeMessage;
 import net.brilliant.exceptions.CommunicatorException;
-import net.brilliant.framework.model.ExecutionContext;
+import net.brilliant.model.ExecutionContext;
 
 /**
  * @author ducbq

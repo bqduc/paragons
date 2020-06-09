@@ -52,7 +52,7 @@ import com.google.i18n.phonenumbers.NumberParseException;
 import com.google.i18n.phonenumbers.PhoneNumberUtil;
 import com.google.i18n.phonenumbers.Phonenumber.PhoneNumber;
 
-import net.brilliant.exceptions.AppRuntimeException;
+import net.brilliant.exceptions.CommonException;
 
 /**
  * @author bqduc
@@ -1206,11 +1206,11 @@ public class CommonUtility implements CommonConstants {
 		}
 	}
 
-	public static int parseInteger(String s, String parseErrorMessage) {
+	public static int parseInteger(String s, String parseErrorMessage) throws CommonException {
 		try {
 			return Integer.parseInt(s);
 		} catch (Exception x) {
-			throw new AppRuntimeException(parseErrorMessage);
+			throw new CommonException(parseErrorMessage);
 		}
 	}
 
@@ -1222,12 +1222,12 @@ public class CommonUtility implements CommonConstants {
 		}
 	}
 
-	public static double parseDouble(String s, String parseErrorMessage, boolean mandatory) {
+	public static double parseDouble(String s, String parseErrorMessage, boolean mandatory) throws CommonException {
 		try {
 			return Double.parseDouble(s);
 		} catch (Exception x) {
 			if (mandatory) {
-				throw new AppRuntimeException(parseErrorMessage);
+				throw new CommonException(parseErrorMessage);
 			}
 			else {
 				return 0;
@@ -1254,7 +1254,7 @@ public class CommonUtility implements CommonConstants {
 		return source.substring(begin, end);
 	}
 
-	public static List<InputStream> getZipFileInputStreams(File file) throws AppRuntimeException {
+	public static List<InputStream> getZipFileInputStreams(File file) throws CommonException {
 		List<InputStream> resp = ListUtility.createArrayList();
 		ZipFile zipFile;
 		try {
@@ -1267,7 +1267,7 @@ public class CommonUtility implements CommonConstants {
 			}
 			zipFile.close();
 		} catch (IOException e) {
-			throw new AppRuntimeException(e);
+			throw new CommonException(e);
 		}
 		return resp;
 	}
@@ -1297,7 +1297,7 @@ public class CommonUtility implements CommonConstants {
 	}
 	*/
 
-	public static List<InputStream> extractZipFile(File zipFile, List<String> zipEntryNames) throws AppRuntimeException {
+	public static List<InputStream> extractZipFile(File zipFile, List<String> zipEntryNames) throws CommonException {
 		List<InputStream> resp = ListUtility.createArrayList();
 		ZipFile innerZipFile = null;
 		Enumeration<? extends ZipEntry> zipEntries = null;
@@ -1312,7 +1312,7 @@ public class CommonUtility implements CommonConstants {
 				}
 			}
 		} catch (IOException e) {
-			throw new AppRuntimeException(e);
+			throw new CommonException(e);
 		} finally {
       try {
       	innerZipFile.close();
@@ -1323,7 +1323,7 @@ public class CommonUtility implements CommonConstants {
 		return resp;
 	}
 
-	public static Map<String, InputStream> extractZipInputStreams(File zipFile) throws AppRuntimeException {
+	public static Map<String, InputStream> extractZipInputStreams(File zipFile) throws CommonException {
 		Map<String, InputStream> resp = ListUtility.createMap();
 		ZipFile innerZipFile = null;
 		Enumeration<? extends ZipEntry> zipEntries = null;
@@ -1336,7 +1336,7 @@ public class CommonUtility implements CommonConstants {
 				resp.put(zipEntry.getName(), cloneInputStream(innerZipFile.getInputStream(zipEntry)));
 			}
 		} catch (IOException e) {
-			throw new AppRuntimeException(e);
+			throw new CommonException(e);
 		} finally {
       try {
       	innerZipFile.close();
@@ -1347,7 +1347,7 @@ public class CommonUtility implements CommonConstants {
 		return resp;
 	}
 
-	public static InputStream cloneInputStream(final InputStream inputStream) throws AppRuntimeException {
+	public static InputStream cloneInputStream(final InputStream inputStream) throws CommonException {
 		InputStream clonedInputStream = null;
 		ByteArrayOutputStream outputStream = null;
 		byte[] buffer = null;
@@ -1367,12 +1367,12 @@ public class CommonUtility implements CommonConstants {
 			outputStream.flush();
 			clonedInputStream = new ByteArrayInputStream(outputStream.toByteArray());
 		} catch (Exception ex) {
-			throw new AppRuntimeException(ex);
+			throw new CommonException(ex);
 		}
 		return clonedInputStream;
 	}
 
-	public static Map<String, InputStream> extractZipInputStreams(File zipFile, List<String> zipEntryNames) throws AppRuntimeException {
+	public static Map<String, InputStream> extractZipInputStreams(File zipFile, List<String> zipEntryNames) throws CommonException {
 		if (CommonUtility.isEmpty(zipEntryNames))
 			return extractAllZipInputStreams(zipFile);
 
@@ -1397,7 +1397,7 @@ public class CommonUtility implements CommonConstants {
 				}
 			}
 		} catch (IOException e) {
-			throw new AppRuntimeException(e);
+			throw new CommonException(e);
 		} finally {
       try {
       	innerZipFile.close();
@@ -1408,7 +1408,7 @@ public class CommonUtility implements CommonConstants {
 		return resp;
 	}
 
-	public static Map<String, InputStream> extractAllZipInputStreams(File zipFile) throws AppRuntimeException {
+	public static Map<String, InputStream> extractAllZipInputStreams(File zipFile) throws CommonException {
 		Map<String, InputStream> resp = ListUtility.createMap();
 		ZipFile innerZipFile = null;
 		Enumeration<? extends ZipEntry> zipEntries = null;
@@ -1422,7 +1422,7 @@ public class CommonUtility implements CommonConstants {
 				resp.put(zipEntry.getName(), buildInputStream(innerZipFile.getInputStream(zipEntry)));
 			}
 		} catch (IOException e) {
-			throw new AppRuntimeException(e);
+			throw new CommonException(e);
 		} finally {
       try {
       	innerZipFile.close();
@@ -1433,7 +1433,7 @@ public class CommonUtility implements CommonConstants {
 		return resp;
 	}
 
-	public static InputStream createInputStream(final String fileName, final byte[] data) throws AppRuntimeException {
+	public static InputStream createInputStream(final String fileName, final byte[] data) throws CommonException {
 		InputStream inputStream = null;
 		File tempDataFile = null;
 		try {
@@ -1450,12 +1450,12 @@ public class CommonUtility implements CommonConstants {
 			FileUtils.writeByteArrayToFile(tempDataFile, data);
 			inputStream = new FileInputStream(tempDataFile);
 		} catch (Exception ex) {
-			throw new AppRuntimeException(ex);
+			throw new CommonException(ex);
 		}
 		return inputStream;
 	}
 
-	public static File createDataFile(final String fileName, final byte[] data) throws AppRuntimeException {
+	public static File createDataFile(final String fileName, final byte[] data) throws CommonException {
 		File targetDataFile = null;
 		try {
 		  if (isEmpty(data))
@@ -1468,12 +1468,12 @@ public class CommonUtility implements CommonConstants {
 
 			FileUtils.writeByteArrayToFile(targetDataFile, data);
 		} catch (Exception ex) {
-			throw new AppRuntimeException(ex);
+			throw new CommonException(ex);
 		}
 		return targetDataFile;
 	}
 
-	public static File createFileFromInputStream(final String originFileName, final InputStream inputStream) throws AppRuntimeException {
+	public static File createFileFromInputStream(final String originFileName, final InputStream inputStream) throws CommonException {
 		File targetDataFile = null;
 		try {
 		  if (isEmpty(inputStream))
@@ -1486,7 +1486,7 @@ public class CommonUtility implements CommonConstants {
 
 			FileUtils.copyInputStreamToFile(inputStream, targetDataFile);
 		} catch (Exception ex) {
-			throw new AppRuntimeException(ex);
+			throw new CommonException(ex);
 		}
 		return targetDataFile;
 	}
@@ -1530,15 +1530,15 @@ public class CommonUtility implements CommonConstants {
 		}
 	}
 
-	public static InputStream buildInputStream(final File file) throws AppRuntimeException {
+	public static InputStream buildInputStream(final File file) throws CommonException {
 		try {
 			return buildInputStream(new FileInputStream(file));
 		} catch (FileNotFoundException e) {
-			throw new AppRuntimeException(e);
+			throw new CommonException(e);
 		}
 	}
 
-	protected static InputStream buildInputStream(final InputStream inputStream) throws AppRuntimeException {
+	protected static InputStream buildInputStream(final InputStream inputStream) throws CommonException {
 		InputStream clonedInputStream = null;
 		ByteArrayOutputStream outputStream = null;
 		byte[] buffer = null;
@@ -1558,7 +1558,7 @@ public class CommonUtility implements CommonConstants {
 			outputStream.flush();
 			clonedInputStream = new ByteArrayInputStream(outputStream.toByteArray());
 		} catch (Exception ex) {
-			throw new AppRuntimeException(ex);
+			throw new CommonException(ex);
 		}
 		return clonedInputStream;
 	}
@@ -1577,7 +1577,7 @@ public class CommonUtility implements CommonConstants {
 			
 			/*List<InputStream> zipEntries = getZipFileInputStreams(zipFile);
 			System.out.println(zipEntries);*/
-		} catch (AppRuntimeException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

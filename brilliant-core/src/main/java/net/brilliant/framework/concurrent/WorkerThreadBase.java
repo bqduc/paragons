@@ -6,7 +6,7 @@ package net.brilliant.framework.concurrent;
 import java.util.concurrent.Callable;
 
 import net.brilliant.framework.component.CompCore;
-import net.brilliant.framework.model.ExecutionContext;
+import net.brilliant.model.ExecutionContext;
 
 /**
  * @author ducbq
