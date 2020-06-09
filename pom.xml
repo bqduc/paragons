@@ -61,6 +61,8 @@
 		<version.javax.faces-api>2.3</version.javax.faces-api>
 		<version.omnifaces>1.14.1</version.omnifaces>
 		
+		<version.commons-lang3>3.10</version.commons-lang3> 
+		<version.commons-text>1.8</version.commons-text>
 	</properties>
  
 	<modules>
@@ -75,6 +77,9 @@
 		<module>brilliant-i18n</module>
 		<module>brilliant-communicator</module>
 		<module>brilliant-dispatcher</module>
+		
+		<module>brilliant-agent-domain</module>
+		<module>brilliant-api-dispatcher</module>
 		<module>brilliant</module>
 		<!--
 		<module>peaga-dispatcher-agent-domain</module>
@@ -129,6 +134,16 @@
       </plugin>
     </plugins>
   </build>
+  
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>  
   
 	<repositories>
 		<repository>
