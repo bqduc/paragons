@@ -21,7 +21,7 @@ import org.springframework.boot.SpringApplication;
 import com.github.adminfaces.starter.ApplicationStarter;
 
  /**
- * @author rmpestano
+ * @author ducbq
  */
 public class ApplicationLunchpad {
 
