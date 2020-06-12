@@ -32,8 +32,8 @@ import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.security.web.csrf.CsrfFilter;
 import org.springframework.web.filter.CharacterEncodingFilter;
 
+import net.brilliant.auth.comp.jwt.JsonWebTokenService;
 import net.brilliant.common.CommonConstants;
-import net.brilliant.config.jwt.JsonWebTokenService;
 import net.brilliant.config.jwt.JwtSecurityConfigurer;
 import net.brilliant.servlet.ServletConstants;
 

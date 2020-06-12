@@ -16,6 +16,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.GenericFilterBean;
 
+import net.brilliant.auth.comp.jwt.JsonWebTokenService;
 import net.brilliant.framework.entity.auth.AuthenticationDetails;
 
 /**
@@ -34,8 +35,8 @@ public class JwtTokenFilter extends GenericFilterBean {
 		Authentication authentication = null;
 		AuthenticationDetails authenticationDetails = null;
 		try {
-			HttpServletRequest request = (HttpServletRequest)req;
-			//System.out.println(request.getHeader("authorization"));
+			//HttpServletRequest request = (HttpServletRequest)req;
+//			System.out.println(request.getHeader("authorization"));
 			String token = jwtTokenProvider.resolveToken((HttpServletRequest) req);
 			if (token != null && jwtTokenProvider.validateToken(token)) {
 				authenticationDetails = jwtTokenProvider.generateAuthenticationDetails(token);
@@ -47,7 +48,6 @@ public class JwtTokenFilter extends GenericFilterBean {
 			filterChain.doFilter(req, res);
 		} catch (Exception e) {
 			e.printStackTrace();
-			// TODO: handle exception
 		}
 	}
 }

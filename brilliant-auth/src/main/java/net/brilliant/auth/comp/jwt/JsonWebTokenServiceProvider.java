@@ -1,7 +1,7 @@
 /**
  * 
- *//*
-package net.brilliant.config.jwt;
+ */
+package net.brilliant.auth.comp.jwt;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -11,8 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Component;
 
-import com.google.api.client.repackaged.org.apache.commons.codec.binary.Base64;
-
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
@@ -21,13 +19,14 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.UnsupportedJwtException;
 import net.brilliant.auth.entity.UserAccountProfile;
 import net.brilliant.common.Base64Utils;
+import net.brilliant.common.StringUtility;
 import net.brilliant.framework.component.CompCore;
 import net.brilliant.framework.entity.auth.AuthenticationDetails;
 
-*//**
+/**
  * @author ducbq
  *
- *//*
+ */
 @Named
 @Component
 public class JsonWebTokenServiceProvider extends CompCore implements JsonWebTokenService {
@@ -97,7 +96,7 @@ public class JsonWebTokenServiceProvider extends CompCore implements JsonWebToke
   }
 
   // Lấy thông tin user từ jwt
-  
+  /*
   public Long getUserIdFromJWT(String token) {
       Claims claims = Jwts.parser()
                           .setSigningKey(JWT_SECRET)
@@ -106,7 +105,7 @@ public class JsonWebTokenServiceProvider extends CompCore implements JsonWebToke
 
       return Long.parseLong(claims.getSubject());
   }
-  
+  */
 
   public boolean validateToken(String jWebToken) {
       try {
@@ -145,19 +144,18 @@ public class JsonWebTokenServiceProvider extends CompCore implements JsonWebToke
 		final String[] REQUEST_HEADER_BEARER_TOKENS = new String[] {"Bearer ", "BearerToken"};
 
 		String bearerToken = req.getHeader("Authorization");
-		if (Base64.isBase64(bearerToken)) {
-			bearerToken = Base64Utils.decode(bearerToken);
-		}
-
-		if (null==bearerToken)
-			return null;
-
+		String actualToken = "";
 		for (String requestHeaderBearerToken :REQUEST_HEADER_BEARER_TOKENS) {
-			if (bearerToken.startsWith(requestHeaderBearerToken))
-		        return bearerToken.substring(requestHeaderBearerToken.length(), bearerToken.length());
-
+			if (bearerToken.startsWith(requestHeaderBearerToken)){
+				actualToken = bearerToken.substring(requestHeaderBearerToken.length(), bearerToken.length());
+				break;
+			}
 		}
-		return null;
+
+		if (StringUtility.isBase64(actualToken)) {
+			actualToken = Base64Utils.decode(actualToken);
+		}
+
+		return actualToken;
 	}
 }
-*/

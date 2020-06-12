@@ -24,6 +24,11 @@ public enum BaseACL {
 	SUBSCRIBER_EXTERNAL ("/spaces/subscription/**", "subscription", "Subscription Authority", "subscriber.external", "subscriber.external@ecosphere.net", "Subscriber", "Ngô Thị Tàu Bên Ngoài"),
 	OSX ("/spaces/osx/**", "osx", "Osxer Authority", "osxer", "osxer@ecosphere.net", "Osxer Authority", "Thái Tông"),
 	CRSX ("/spaces/crsx/**", "crsx", "Crsx Authority", "crsxer", "crsxer@ecosphere.net", "Crsxer", "Phùng Hổ"),
+
+	SUBSCRIBER_PROTECTED ("/spaces/subscription/**", "subscription", "Subscription Authority", "subscriber.protected", "subscriber.protected@ecosphere.net", "Subscriber", "Nguyễn Lâm Thị Thuyền Bộ"),
+	SUBSCRIBER_PRIVATE ("/spaces/subscription/**", "subscription", "Subscription Authority", "subscriber.private", "subscriber.private@ecosphere.net", "Subscriber", "Trần Thị Thuyền Nội"),
+
+	SUBSCRIBER_RESTRICTED ("/spaces/subscription/**", "subscription", "Subscription Authority", "subscriber.restricted", "subscriber.restricted@ecosphere.net", "Restricted Subscriber", "Nguyễn Lâm Thị Thuyền"),
 	;
 
 	private String antMatcher;

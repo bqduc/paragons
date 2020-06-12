@@ -1,7 +1,7 @@
 /**
  * 
- *//*
-package net.brilliant.dispatcher;
+ */
+package net.brilliant.auth.helper;
 
 import javax.inject.Inject;
 
@@ -9,6 +9,7 @@ import org.springframework.core.env.Environment;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
+import net.brilliant.auth.comp.jwt.JsonWebTokenService;
 import net.brilliant.auth.domain.BaseACL;
 import net.brilliant.auth.entity.AccessDecisionPolicy;
 import net.brilliant.auth.entity.Authority;
@@ -17,31 +18,29 @@ import net.brilliant.auth.model.AccessDecision;
 import net.brilliant.auth.service.AccessDecisionPolicyService;
 import net.brilliant.auth.service.AuthorityService;
 import net.brilliant.auth.service.UserAccountService;
+import net.brilliant.common.Base64Utils;
 import net.brilliant.common.CommonUtility;
-import net.brilliant.config.jwt.JsonWebTokenService;
 import net.brilliant.css.service.config.ConfigurationService;
 import net.brilliant.entity.config.Configuration;
 import net.brilliant.framework.component.ComponentBase;
 import net.brilliant.global.GlobalConstants;
-import net.brilliant.lingual.helper.LingualHelper;
 
-*//**
+/**
  * @author ducbq
  *
- *//*
+ */
 @Component
-public class DataServiceDispatchHelper extends ComponentBase {
-	
-	*//**
+public class AuthDataDispatchRepositoryHelper extends ComponentBase {
+	/**
 	 * 
-	 *//*
-	private static final long serialVersionUID = -7601283763560248413L;
+	 */
+	private static final long serialVersionUID = 8201117425860593585L;
 
 	@Inject
 	  private Environment environment;
 
-		@Inject
-		private LingualHelper lingualHelper;
+		/*@Inject
+		private LingualHelper lingualHelper;*/
 
 		@Inject
 		private ConfigurationService configurationService;
@@ -110,9 +109,9 @@ public class DataServiceDispatchHelper extends ComponentBase {
 						);
 			}
 		
-			if (!accessDecisionPolicyService.exists(propAccessPattern, BaseACL.SUBSCRIBER.getAntMatcher())) {
+			/*if (!accessDecisionPolicyService.exists(propAccessPattern, BaseACL.SUBSCRIBER.getAntMatcher())) {
 				accessDecisionPolicyService.saveOrUpdate(AccessDecisionPolicy.builder().accessPattern(BaseACL.SUBSCRIBER.getAntMatcher()).authority(authorityService.getByName(BaseACL.SUBSCRIBER.getAuthority())).build());
-			}
+			}*/
 
 			//One role can accesses to some access patterns
 			String[] adminPatterns = new String[] {"/bszone/auxadmin/**", "/bszone/stock/**", "/admin/**", "/dbx/**", "/spaces/**", "/pages/**", "/user/**", "/pages/public/**"};
@@ -330,6 +329,7 @@ public class DataServiceDispatchHelper extends ComponentBase {
 			  				new Authority[] {authorityService.getByName(BaseACL.SUBSCRIBER_PROTECTED.getAuthority())}));
 				updateJWebToken(securityAccountProfile);
 			}
+
 			if (!this.userAccountService.exists(propSsoId, BaseACL.SUBSCRIBER_PRIVATE.getUser())) {
 				securityAccountProfile = this.userAccountService.saveOrUpdate(
 			  		UserAccountProfile.getInsance(
@@ -341,11 +341,31 @@ public class DataServiceDispatchHelper extends ComponentBase {
 			  				new Authority[] {authorityService.getByName(BaseACL.SUBSCRIBER_PRIVATE.getAuthority())}));
 				updateJWebToken(securityAccountProfile);
 			}
+
+			if (!this.userAccountService.exists(propSsoId, BaseACL.SUBSCRIBER_RESTRICTED.getUser())) {
+				securityAccountProfile = this.userAccountService.saveOrUpdate(
+			  		UserAccountProfile.getInsance(
+			  				BaseACL.SUBSCRIBER_RESTRICTED.getFirstName(), 
+			  				BaseACL.SUBSCRIBER_RESTRICTED.getLastName(), 
+			  				BaseACL.SUBSCRIBER_RESTRICTED.getUser(), 
+			  				passwordEncoder.encode(BaseACL.SUBSCRIBER_RESTRICTED.getUser()), 
+			  				BaseACL.SUBSCRIBER_RESTRICTED.getEmail(), 
+			  				new Authority[] {authorityService.getByName(BaseACL.SUBSCRIBER_RESTRICTED.getAuthority())}));
+				updateEncodedJWebToken(securityAccountProfile);
+			}
 		}
 
 		private UserAccountProfile updateJWebToken(UserAccountProfile securityAccountProfile) {
 			String indefiniteToken = this.jwtServiceProvider.generateIndefiniteToken(securityAccountProfile);
 			//indefiniteToken = Base64Utils.encode(indefiniteToken);
+			securityAccountProfile.setActivationKey(indefiniteToken);
+			this.userAccountService.saveOrUpdate(securityAccountProfile);
+			return securityAccountProfile;
+		}
+
+		private UserAccountProfile updateEncodedJWebToken(UserAccountProfile securityAccountProfile) {
+			String indefiniteToken = this.jwtServiceProvider.generateIndefiniteToken(securityAccountProfile);
+			indefiniteToken = Base64Utils.encode(indefiniteToken);
 			securityAccountProfile.setActivationKey(indefiniteToken);
 			this.userAccountService.saveOrUpdate(securityAccountProfile);
 			return securityAccountProfile;
@@ -373,7 +393,7 @@ public class DataServiceDispatchHelper extends ComponentBase {
 
 		private void initCountries() {
 			log.info("Enter countries intialize");
-			this.lingualHelper.initAvailableCountries();
+			//this.lingualHelper.initAvailableCountries();
 			log.info("Leave countries intialize");
 		}
 		
@@ -383,6 +403,4 @@ public class DataServiceDispatchHelper extends ComponentBase {
 			duration = System.currentTimeMillis()-duration;
 			System.out.println("Dispatching master data taken: " + duration);
 	}
-
 }
-*/

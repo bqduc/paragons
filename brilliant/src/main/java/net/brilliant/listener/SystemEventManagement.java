@@ -9,7 +9,7 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
-import net.brilliant.dispatcher.DataServiceDispatchHelper;
+import net.brilliant.auth.helper.AuthDataDispatchRepositoryHelper;
 import net.brilliant.framework.component.ComponentBase;
 
 /**
@@ -24,7 +24,8 @@ public class SystemEventManagement extends ComponentBase {
 	private static final long serialVersionUID = 7564662407839189753L;
 
 	@Inject
-	private DataServiceDispatchHelper dataServiceDispatchHelper;
+	private AuthDataDispatchRepositoryHelper dataServiceDispatchHelper;
+	//private DataServiceDispatchHelper dataServiceDispatchHelper;
 
 	@EventListener(ApplicationReadyEvent.class)
 	public void onApplicationReadyEventListener() {

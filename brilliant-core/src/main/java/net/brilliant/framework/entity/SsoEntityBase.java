@@ -35,7 +35,7 @@ public abstract class SsoEntityBase extends RepoEntity /*RepoAuditable*/ {
 	@Column(name = "system_admin")
 	private Boolean systemAdmin = false;
 
-	@Column(name = "activation_key", length=255)
+	@Column(name = "activation_key", length=450)
 	@JsonIgnore
 	private String activationKey;
 
