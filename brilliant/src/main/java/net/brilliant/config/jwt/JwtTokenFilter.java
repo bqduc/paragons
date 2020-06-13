@@ -11,6 +11,8 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -24,6 +26,7 @@ import net.brilliant.framework.entity.auth.AuthenticationDetails;
  *
  */
 public class JwtTokenFilter extends GenericFilterBean {
+	private static Logger logger = LogManager.getLogger(JwtTokenFilter.class);
 	private JsonWebTokenService jwtTokenProvider;
 
 	public JwtTokenFilter(JsonWebTokenService jwtTokenProvider) {
@@ -47,7 +50,7 @@ public class JwtTokenFilter extends GenericFilterBean {
 
 			filterChain.doFilter(req, res);
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error(e.getMessage(), e);
 		}
 	}
 }

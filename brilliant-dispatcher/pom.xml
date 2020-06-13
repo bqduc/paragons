@@ -24,11 +24,16 @@
 			<artifactId>brilliant-css</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-		<!-- <dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>brilliant-communicator</artifactId>
+			<version>${project.version}</version>
+		</dependency>		
+		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>brilliant-auth</artifactId>
 			<version>${project.version}</version>
-		</dependency> -->	
+		</dependency>	
 		<!--
 		
 		<dependency>
