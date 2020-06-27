@@ -30,7 +30,7 @@ public class SystemEventManagement extends ComponentBase {
 	@EventListener(ApplicationReadyEvent.class)
 	public void onApplicationReadyEventListener() {
 		try {
-			dataServiceDispatchHelper.dispatch();
+			//dataServiceDispatchHelper.dispatch();
 		} catch (Exception e) {
 			log.error(e);
 		}
