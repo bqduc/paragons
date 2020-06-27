@@ -11,7 +11,6 @@ import java.util.Map;
 import java.util.Set;
 
 import org.apache.poi.poifs.filesystem.FileMagic;
-import org.springframework.stereotype.Component;
 
 import lombok.Builder;
 import net.brilliant.common.CommonUtility;
@@ -29,7 +28,6 @@ import net.brilliant.osx.model.OsxBucketContainer;
  * @author bqduc
  *
  */
-@Component
 @Builder
 @SuppressWarnings({ "unchecked", "rawtypes" })
 public class OfficeSuiteServiceProvider {
