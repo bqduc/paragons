@@ -21,8 +21,6 @@ import java.util.StringTokenizer;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.beanutils.PropertyUtils;
 
-import com.sun.javafx.fxml.PropertyNotFoundException;
-
 import net.brilliant.exceptions.ExecutionContextException;
 
 /**
