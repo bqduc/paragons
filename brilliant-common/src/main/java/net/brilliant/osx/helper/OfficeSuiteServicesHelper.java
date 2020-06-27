@@ -8,8 +8,6 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.stereotype.Component;
-
 import lombok.Builder;
 import net.brilliant.common.CommonUtility;
 import net.brilliant.common.ListUtility;
@@ -24,7 +22,6 @@ import net.brilliant.osx.model.OsxBucketContainer;
  * @author ducbui
  *
  */
-@Component
 @Builder
 public class OfficeSuiteServicesHelper {
 	protected ExecutionContext initConfigData(final File zipFile) {
