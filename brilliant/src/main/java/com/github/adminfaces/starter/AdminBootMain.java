@@ -21,7 +21,7 @@ import org.springframework.boot.SpringApplication;
  /**
  * @author rmpestano
  */
-public class AdminBootMain {
+/*public class AdminBootMain {
 
 	protected AdminBootMain() {
 	}
@@ -30,4 +30,4 @@ public class AdminBootMain {
 		SpringApplication.run(ApplicationStarter.class, args);
 	}
 
-}
+}*/
