@@ -23,8 +23,8 @@ public class SystemEventManagement extends ComponentBase {
 	 */
 	private static final long serialVersionUID = 7564662407839189753L;
 
-	@Inject
-	private AuthDataDispatchRepositoryHelper dataServiceDispatchHelper;
+	/*@Inject
+	private AuthDataDispatchRepositoryHelper dataServiceDispatchHelper;*/
 	//private DataServiceDispatchHelper dataServiceDispatchHelper;
 
 	@EventListener(ApplicationReadyEvent.class)
