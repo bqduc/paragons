@@ -29,9 +29,9 @@ import static com.github.adminfaces.template.util.Assert.has;
 @ViewScoped
 public class CarFormMB implements Serializable {
 
-    @Inject
+/*    @Inject
     CarService carService;
-
+*/
     private Integer id;
     private Car car;
 
@@ -41,7 +41,7 @@ public class CarFormMB implements Serializable {
             return;
         }
         if (has(id)) {
-            car = carService.findById(id);
+            //car = carService.findById(id);
         } else {
             car = new Car();
         }
@@ -70,7 +70,7 @@ public class CarFormMB implements Serializable {
             throw new AccessDeniedException("User not authorized! Only role <b>admin</b> can remove cars.");
         }
         if (has(car) && has(car.getId())) {
-            carService.remove(car);
+            //carService.remove(car);
             addDetailMessage("Car " + car.getModel()
                     + " removed successfully");
             Faces.getFlash().setKeepMessages(true);
@@ -81,10 +81,10 @@ public class CarFormMB implements Serializable {
     public void save() {
         String msg;
         if (car.getId() == null) {
-            carService.insert(car);
+            //carService.insert(car);
             msg = "Car " + car.getModel() + " created successfully";
         } else {
-            carService.update(car);
+            //carService.update(car);
             msg = "Car " + car.getModel() + " updated successfully";
         }
         addDetailMessage(msg);

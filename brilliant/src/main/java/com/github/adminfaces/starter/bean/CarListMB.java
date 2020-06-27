@@ -1,21 +1,20 @@
 package com.github.adminfaces.starter.bean;
 
-import com.github.adminfaces.starter.infra.model.Filter;
-import com.github.adminfaces.starter.model.Car;
-import com.github.adminfaces.starter.service.CarService;
-import com.github.adminfaces.template.exception.BusinessException;
-import javax.faces.view.ViewScoped;
-import org.primefaces.model.LazyDataModel;
-import org.primefaces.model.SortOrder;
+import static com.github.adminfaces.starter.util.Utils.addDetailMessage;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.inject.Inject;
+import javax.faces.view.ViewScoped;
 import javax.inject.Named;
-import java.io.Serializable;
-import java.util.List;
-import java.util.Map;
 
-import static com.github.adminfaces.starter.util.Utils.addDetailMessage;
+import org.primefaces.model.LazyDataModel;
+
+import com.github.adminfaces.starter.infra.model.Filter;
+import com.github.adminfaces.starter.model.Car;
+import com.github.adminfaces.template.exception.BusinessException;
 
 /**
  * Created by rmpestano on 12/02/17.
@@ -24,8 +23,8 @@ import static com.github.adminfaces.starter.util.Utils.addDetailMessage;
 @ViewScoped
 public class CarListMB implements Serializable {
 
-    @Inject
-    CarService carService;
+    /*@Inject
+    CarService carService;*/
 
     Integer id;
 
@@ -67,7 +66,7 @@ public class CarListMB implements Serializable {
 
             @Override
             public Car getRowData(String key) {
-                return carService.findById(new Integer(key));
+                return new Car();// carService.findById(new Integer(key));
             }
         };
     }
@@ -77,22 +76,22 @@ public class CarListMB implements Serializable {
     }
 
     public List<String> completeModel(String query) {
-        List<String> result = carService.getModels(query);
-        return result;
+        //List<String> result = carService.getModels(query);
+        return new ArrayList<>();//result;
     }
 
     public void findCarById(Integer id) {
         if (id == null) {
             throw new BusinessException("Provide Car ID to load");
         }
-        selectedCars.add(carService.findById(id));
+        //selectedCars.add(carService.findById(id));
     }
 
     public void delete() {
         int numCars = 0;
         for (Car selectedCar : selectedCars) {
             numCars++;
-            carService.remove(selectedCar);
+            //carService.remove(selectedCar);
         }
         selectedCars.clear();
         addDetailMessage(numCars + " cars deleted successfully!");
