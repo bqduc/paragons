@@ -1,7 +1,7 @@
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
- */
+ 
 package com.github.adminfaces.starter.service;
 
 import com.github.adminfaces.starter.infra.model.Filter;
@@ -19,10 +19,10 @@ import java.util.stream.Collectors;
 import static com.github.adminfaces.template.util.Assert.has;
 import org.springframework.stereotype.Component;
 
-/**
+*//**
  * @author rmpestano
  *         Car Business logic
- */
+ *//*
 @Component
 public class CarService implements Serializable {
 
@@ -186,3 +186,4 @@ public class CarService implements Serializable {
         allCars.add(car);
     }
 }
+*/

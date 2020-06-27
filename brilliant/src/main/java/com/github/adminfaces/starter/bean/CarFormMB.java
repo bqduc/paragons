@@ -4,23 +4,22 @@
  */
 package com.github.adminfaces.starter.bean;
 
+import static com.github.adminfaces.starter.util.Utils.addDetailMessage;
+import static com.github.adminfaces.template.util.Assert.has;
+
+import java.io.IOException;
+import java.io.Serializable;
+
+import javax.faces.view.ViewScoped;
+import javax.inject.Named;
+
+import org.omnifaces.util.Faces;
+
 import com.github.adminfaces.starter.model.Car;
-import com.github.adminfaces.starter.service.CarService;
 import com.github.adminfaces.starter.util.Utils;
 import com.github.adminfaces.template.exception.AccessDeniedException;
 
 import net.brilliant.common.CommonUtility;
-
-import org.omnifaces.util.Faces;
-
-import javax.faces.view.ViewScoped;
-import javax.inject.Inject;
-import javax.inject.Named;
-import java.io.IOException;
-import java.io.Serializable;
-
-import static com.github.adminfaces.starter.util.Utils.addDetailMessage;
-import static com.github.adminfaces.template.util.Assert.has;
 
 /**
  * @author rmpestano
