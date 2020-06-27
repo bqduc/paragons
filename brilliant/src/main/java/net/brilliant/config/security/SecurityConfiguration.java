@@ -49,7 +49,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	protected DigesterEncryptorReporistory encryptoReporistory;
 
 	@Inject
-	private AuthenticationProvider authenticationProvider;
+	private AuthenticationProvider customAuthenticationProvider;
 
 	@Inject
 	private AccessDeniedHandler customAccessDeniedHandler;
@@ -92,7 +92,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.authenticationProvider(this.authenticationProvider);
+		auth.authenticationProvider(this.customAuthenticationProvider);
 	}
 
 	@Override
@@ -137,7 +137,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
        		.deleteCookies("JSESSIONID")
           .permitAll()
       .and()
-      	.authenticationProvider(this.authenticationProvider)
+      	.authenticationProvider(this.customAuthenticationProvider)
       	.exceptionHandling().accessDeniedHandler(this.customAccessDeniedHandler)
 
       .and()

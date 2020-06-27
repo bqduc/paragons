@@ -39,9 +39,6 @@ public class AuthDataDispatchRepositoryHelper extends ComponentBase {
 	@Inject
 	  private Environment environment;
 
-		/*@Inject
-		private LingualHelper lingualHelper;*/
-
 		@Inject
 		private ConfigurationService configurationService;
 
