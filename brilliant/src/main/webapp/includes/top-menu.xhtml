@@ -3,8 +3,19 @@
                 xmlns:h="http://java.sun.com/jsf/html"
                 xmlns:ui="http://java.sun.com/jsf/facelets"
                 xmlns:p="http://primefaces.org/ui"
-                xmlns:pe="http://primefaces.org/ui/extensions">
+                xmlns:pe="http://primefaces.org/ui/extensions">	  
 	<ul class="nav navbar-nav">
+	<li>
+
+		<p:commandLink actionListener="#{localeManager.setLanguage('en')}" ajax="true">
+			<img src="/resources/images/unitedKingdom-3d-round-16.png" class="img-circle" alt="#{messages['lbl.english']}" title="#{messages['lbl.english']}" />
+		</p:commandLink>
+	</li>
+	<li>
+		<p:commandLink actionListener="#{localeManager.setLanguage('vi')}" ajax="true">
+    	<img src="/resources/images/vietNam-3d-round-16.png" class="img-circle" alt="#{messages['lbl.vietnamese']}" title="#{messages['lbl.vietnamese']}" />
+		</p:commandLink>
+	</li>
   	<li> <p:link value="#{messages['lbl.dashboard']}" href="/index.jsf" /></li>
   	<li class="dropdown mega-dropdown">
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown">#{messages['lbl.menu.poe']}<span class="caret"></span></a>				
@@ -316,10 +327,10 @@
                             <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#">#{messages['lbl.Sales']}</a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <p:link value="#{messages.Customers}"/>
+                                    <p:link value="#{messages['Customers']}"/>
                                 </li>
                                 <li> 
-                                    <p:link value="#{messages.SalesOrders}" />   
+                                    <p:link value="#{messages['SalesOrders']}" />   
                                 </li>   
                             </ul>
                         </li>
@@ -327,22 +338,22 @@
                             <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#">#{messages['lbl.Purchases']}</a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <p:link value="#{messages.Vendors}" />
+                                    <p:link value="#{messages['Vendors']}" />
                                 </li>
                                 <li> 
-                                    <p:link value="#{messages.PurchaseOrders}" />   
+                                    <p:link value="#{messages['PurchaseOrders']}" />   
                                 </li>   
 
-								<li class="dropdown-submenu"><a tabindex="-1" href="#">#{messages.Purchases} 1-2</a>
+								<li class="dropdown-submenu"><a tabindex="-1" href="#">#{messages['Purchases']} 1-2</a>
 									<ul class="dropdown-menu">
-										<li class="dropdown-submenu"><a tabindex="-1" href="#">#{messages.Purchases} 1-2-1</a>
+										<li class="dropdown-submenu"><a tabindex="-1" href="#">#{messages['Purchases']} 1-2-1</a>
 											<ul class="dropdown-menu">
-												<li><a tabindex="-1" href="#">#{messages.Purchases} 1-2-1-1</a></li>
+												<li><a tabindex="-1" href="#">#{messages['Purchases']} 1-2-1-1</a></li>
 											</ul>
 										</li>
-										<li class="dropdown-submenu"><a tabindex="-1" href="#">#{messages.Purchases} 1-2-2</a>
+										<li class="dropdown-submenu"><a tabindex="-1" href="#">#{messages['Purchases']} 1-2-2</a>
 											<ul class="dropdown-menu">
-												<li><a tabindex="-1" href="#"><p:link rendered="#{ceberusIdentity.hasPermission('purchase122', 'select')}" value="#{messages.Purchases} 1-2-2-1" outcome="/pages/public/purchaseOrder/index"/></a></li>
+												<li><a tabindex="-1" href="#"><p:link rendered="#{ceberusIdentity.hasPermission('purchase122', 'select')}" value="#{messages['Purchases']} 1-2-2-1" outcome="/pages/public/purchaseOrder/index"/></a></li>
 											</ul>
 										</li>
 									</ul>
@@ -352,33 +363,33 @@
                         <li class="dropdown">
                             <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#">#{messages['lbl.Inventory']}</a>
                             <ul class="dropdown-menu">
-                                <li> <p:link value="#{messages.IncomingShipments}" /></li>
-                                <li> <p:link value="#{messages.DeliveryOrders}" /></li>
-                                <li> <p:link value="#{messages.Products}" /></li> 
-                                <li> <p:link value="#{messages.InventoryValuation}" /></li> 
+                                <li> <p:link value="#{messages['IncomingShipments']}" /></li>
+                                <li> <p:link value="#{messages['DeliveryOrders']}" /></li>
+                                <li> <p:link value="#{messages['Products']}" /></li> 
+                                <li> <p:link value="#{messages['InventoryValuation']}" /></li> 
                             </ul>
                         </li>
                         <li class="dropdown">
                             <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#">#{messages['lbl.Accounting']}</a>
                             <ul class="dropdown-menu">
-                                <li> <p:link value="#{messages.CustomerInvoices}" /></li>
-                                <li> <p:link value="#{messages.CustomerPayments}" /></li>
-                                <li> <p:link value="#{messages.VendorBills}" /></li>
-                                <li> <p:link value="#{messages.VendorPayments}" /></li>
-                                <li> <p:link value="#{messages.JournalEntries}" /></li>
-                                <li> <p:link value="#{messages.JournalItems}" /></li>
+                                <li> <p:link value="#{messages['CustomerInvoices']}" /></li>
+                                <li> <p:link value="#{messages['CustomerPayments']}" /></li>
+                                <li> <p:link value="#{messages['VendorBills']}" /></li>
+                                <li> <p:link value="#{messages['VendorPayments']}" /></li>
+                                <li> <p:link value="#{messages['JournalEntries']}" /></li>
+                                <li> <p:link value="#{messages['JournalItems']}" /></li>
                             </ul>
                         </li> 
                         <li class="dropdown">
                             <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#">#{messages['lbl.Configuration']}</a>
                             <ul class="dropdown-menu">
-                                <li> <p:link value="#{messages.Accounts}" /></li>
-                                <li> <p:link value="#{messages.Journals}"  /></li>
-                                <li> <p:link value="#{messages.Taxess}" /></li>
-                                <li> <p:link value="#{messages.Users}" /></li>
-                                <li> <p:link value="#{messages.ProductCategories}" /></li>
-                                <li> <p:link value="#{messages.UnitsOfMeasure}"/></li>
-                                <li> <p:link value="#{messages.ProductUomCategories}" /></li>
+                                <li> <p:link value="#{messages['Accounts']}" /></li>
+                                <li> <p:link value="#{messages['Journals']}"  /></li>
+                                <li> <p:link value="#{messages['Taxess']}" /></li>
+                                <li> <p:link value="#{messages['Users']}" /></li>
+                                <li> <p:link value="#{messages['ProductCategories']}" /></li>
+                                <li> <p:link value="#{messages['UnitsOfMeasure']}"/></li>
+                                <li> <p:link value="#{messages['ProductUomCategories']}" /></li>
                             </ul>
                         </li> 
                         <li class="dropdown">
@@ -399,7 +410,7 @@
                             </ul>
                         </li> 
                     </ul>   
-					<ul class="nav navbar-nav">
+		<ul class="nav navbar-nav">
 			<li class="dropdown mega-dropdown">
     			<a href="#" class="dropdown-toggle" data-toggle="dropdown">#{messages['lbl.menu.addOns']}<span class="caret"></span></a>				
 				<ul class="dropdown-menu mega-dropdown-menu">
