@@ -14,19 +14,12 @@
  * limitations under the License.
  */
 
-package com.github.adminfaces.starter;
-
-import java.util.List;
-
-import javax.inject.Inject;
+package net.brilliant.starter;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 
 import com.github.adminfaces.starter.config.MasterConfiguration;
-import com.github.adminfaces.starter.model.Car;
-import com.github.adminfaces.starter.util.Utils;
 
 import net.brilliant.config.BaseConfiguration;
 
@@ -36,12 +29,12 @@ import net.brilliant.config.BaseConfiguration;
 @Import(value = { MasterConfiguration.class, BaseConfiguration.class })
 @SpringBootApplication
 public class ApplicationStarter {
-	@Inject
+	/*@Inject
 	private Utils utils;
 
     @Bean
     public List<Car> getCars() {
         return utils.getCars();
-    }
+    }*/
 	
 }

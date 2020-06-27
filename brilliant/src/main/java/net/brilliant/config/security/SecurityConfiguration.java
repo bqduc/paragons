@@ -62,12 +62,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
   @Inject
   private JsonWebTokenService jwtTokenProvider;
-  
-  @Bean
-  public PasswordEncoder passwordEncoder() {
-  	//return encryptoReporistory.getSCryptPasswordEncoder();
-  	return new BCryptPasswordEncoder();/*virtualPasswordEncoder*/
-  }
+
 
 	@Configuration
 	@Order(1)

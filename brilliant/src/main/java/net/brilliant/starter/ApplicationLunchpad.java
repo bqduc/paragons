@@ -18,8 +18,6 @@ package net.brilliant.starter;
 
 import org.springframework.boot.SpringApplication;
 
-import com.github.adminfaces.starter.ApplicationStarter;
-
  /**
  * @author ducbq
  */
