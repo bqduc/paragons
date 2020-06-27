@@ -1,4 +1,4 @@
-package net.brilliant.mvp.bean.analytics;
+/*package net.brilliant.mvp.bean.analytics;
 
 import static com.github.adminfaces.template.util.Assert.has;
 
@@ -28,16 +28,16 @@ import org.primefaces.event.SelectEvent;
 
 //import com.google.gson.JsonObject;
 
-/**
+*//**
  * Created by rmpestano on 01/05/17.
- */
+ *//*
 @Named
 @ViewScoped
 public class AnalyticsMB implements Serializable {
 
-    /**
+    *//**
 	 * 
-	 */
+	 *//*
 	private static final long serialVersionUID = 9079736197246670359L;
 
 		private static final List<String> PIE_CHART_COLORS = Arrays.asList("#f56954", "#00a65a", "#f39c12", "#00c0ef", "#3c8dbc", "#d2d6de", "#d81b60", "#01FF70", "#b50346",
@@ -264,7 +264,7 @@ public class AnalyticsMB implements Serializable {
         return visitorsByPage;
     }
 
-    /**
+    *//**
      * var data = {
      * labels : ["countryName","countryName","countryName","countryName","countryName","countryName","countryName"],
      * datasets : [
@@ -275,7 +275,7 @@ public class AnalyticsMB implements Serializable {
      * }
      * ]
      * }
-     */
+     *//*
     public String getVisitorsByCountry() {
         if (visitorsByCountry == null) {
 
@@ -314,9 +314,9 @@ public class AnalyticsMB implements Serializable {
         return visitorsByCountry;
     }
 
-    /**
+    *//**
      * Creates a GeoJson feature layer to be presented in a leaflet web map
-     */
+     *//*
     public String getPageViewsGeoJson() {
         if (pageViewsGeoJson == null) {
             pageViewsGeoJson = analyticsStore.getGeoJsonCache(statisticsDate);
@@ -349,3 +349,4 @@ public class AnalyticsMB implements Serializable {
         this.monthYearSelection = monthYearSelection;
     }
 }
+*/

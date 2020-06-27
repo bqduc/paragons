@@ -1,4 +1,4 @@
-package net.brilliant.mvp.bean.analytics;
+/*package net.brilliant.mvp.bean.analytics;
 
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.auth.oauth2.TokenResponse;
@@ -39,12 +39,12 @@ public class DriverService {
     }
 
 
-    /**
+    *//**
      * Build and return an authorized Drive client service.
      *
      * @return an authorized Drive client service
      * @throws IOException
-     */
+     *//*
     public static Drive getDriveService() throws IOException, GeneralSecurityException {
         Credential credential = authorize();
         return new Drive.Builder(
@@ -53,3 +53,4 @@ public class DriverService {
                 .build();
     }
 }
+*/
