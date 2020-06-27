@@ -42,7 +42,7 @@ public class DigesterEncryptorReporistory {
 		return bCryptPasswordEncoder;
 	}
 	
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		String regex = "^$$e0801$$*?=";//"^$e0801$ =$";
 		Pattern pattern = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
 		
@@ -53,5 +53,5 @@ public class DigesterEncryptorReporistory {
 			encoded = passwordEncoder.encode(new StringBuilder(passBase).append(i).toString());
 			System.out.println(pattern.matcher(encoded).find() + "\t" + encoded);
 		}
-	}
+	}*/
 }
