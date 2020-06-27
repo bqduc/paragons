@@ -81,13 +81,14 @@
 		
 		<module>brilliant-agent-domain</module>
 		<module>brilliant-api-dispatcher</module>
+		<module>brilliant-cmx</module>
 		<module>brilliant</module>
 		<!--
 		<module>peaga-dispatcher-agent-domain</module>
 		<module>brilliant-template</module>
 		
 		
-		<module>brilliant-core</module>
+		
 		
 		
 		<module>brilliant-ase</module>
